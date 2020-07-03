@@ -1,12 +1,11 @@
 import React from 'react';
-import theme from './TemaConfig';
-import {ThemeProvider} from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import '../Styles/Style.css';
-import Navbar from '../componentes/Navbar';
-import Contenedor from '../componentes/Contenedor';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
+import Navbar from './Navbar';
+import {Box, Grid} from '@material-ui/core';
+import Cajon from './Cajon';
+import Contenedor from './Contenedor';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,45 +16,95 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-{/* <Buttin  color="primary" disableElevation variant='contained' >
-    Registrarme
-</Buttin> */}
+export default function FormRegister() {
+  const classes = useStyles();
 
-class FormRegister extends React.Component{
-
+  return (
     
-    render(){ const classes = useStyles();
-      
-        return(
-            
-           
-        <ThemeProvider theme= {theme}>
-           <Navbar/><Contenedor/>  
+    <form className={classes.root} noValidate autoComplete="off">
+     <Navbar/>
+     
+     <Typography variant='text'  >
+           <Box color= '#8c3d66'            
+           px={20} >      
+           <Typography variant="body2" color="textSecondary" component="p">
+           Aquí empiezan los productos
+        </Typography>
+              
+           </Box> <br></br>
 
-           
-            <Button  variant="contained" color="primary">dfd</Button>
-            <Button  variant="contained" color="secondary">dfd</Button>
-            <h1>sdfdf</h1>
-            <form className={classes.root} noValidate autoComplete="off">
+        <Grid container>
+                
+                <Grid item xs={10} sm={6} md={2}> 
+                    <Box pt={1}>
+                    <TextField
+          required
+          id="outlined-required"
+          label="Requiregdhd"
+          defaultValue="Hello World"
+          variant="outlined"
+        />
+                    </Box>  
+                </Grid>
+                </Grid>
       
-     
-     
-        <TextField required id="standard-required" label="Required" defaultValue="Hello World" />
-        <TextField disabled id="standard-disabled" label="Disabled" defaultValue="Hello World" />
+                <Contenedor 
+     />
+      </Typography >
+      <div>
         <TextField
-          id="standard-password-input"
+          required
+          id="outlined-required"
+          label="Required"
+          defaultValue="Hello World"
+          variant="outlined"
+        />
+       
+     
+        <TextField
+          disabled
+          id="outlined-disabled"
+          label="Disabled"
+          defaultValue="Hello World"
+          variant="outlined"
+        />
+        <TextField
+          id="outlined-password-input"
           label="Password"
           type="password"
           autoComplete="current-password"
-        />  </form>
-       
-
-        </ThemeProvider>
+          variant="outlined"
+        />
+        <TextField
+          id="outlined-read-only-input"
+          label="Read Only"
+          defaultValue="Hello World"
+          InputProps={{
+            readOnly: true,
+          }}
+          variant="outlined"
+        />
+        <TextField
+          id="outlined-number"
+          label="Number"
+          type="number"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant="outlined"
+        />
+        <TextField id="outlined-search" label="Search field" type="search" variant="outlined" />
+        <TextField
+          id="outlined-helperText"
+          label="Helper text"
+          defaultValue="Default Value"
+          helperText="Some important text"
+          variant="outlined"
+        />
         
-        )
-    }
-
-
+      </div>
+      
+    </form>
+    
+  );
 }
-
-export default FormRegister;

@@ -65,7 +65,7 @@ AppBar:{
                     </IconButton>
                   
                     <Typography variant='text'  color="secundary" className={classes.title}>
-                    <Button variant='text' color="secundary"> <img className ="logo" src={logo} alt="logo" />
+                    <Button  > <img className ="logo" src={logo} alt="logo" />
                      WEB  </Button>  </Typography>
                     
                     <form className={classes.root} noValidate autoComplete="off">
